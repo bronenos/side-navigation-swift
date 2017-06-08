@@ -206,6 +206,7 @@ open class SideNavigationController: UIViewController {
             #if os(iOS)
             self.sideGestures(enabled: true)
             #endif
+            side.options.closeHandler?()
         }
     }
 

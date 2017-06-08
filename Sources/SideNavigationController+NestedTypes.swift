@@ -39,6 +39,7 @@ public extension SideNavigationController {
         public var panningEnabled: Bool
         public var scale: CGFloat
         public var position: Position
+        public var closeHandler: ((Void) -> Void)?
         public var shadowColor: UIColor {
             get {
                 return UIColor(cgColor: self.shadowCGColor)
@@ -58,7 +59,8 @@ public extension SideNavigationController {
                     alwaysInteractionEnabled: Bool = false,
                     panningEnabled: Bool = true,
                     scale: CGFloat = 1,
-                    position: Position = .back) {
+                    position: Position = .back,
+                    closeHandler: ((Void) -> Void)? = nil) {
             self.widthPercent = widthPercent
             self.animationDuration = animationDuration
             self.overlayColor = overlayColor
@@ -69,6 +71,7 @@ public extension SideNavigationController {
             self.scale = scale
             self.position = position
             self.shadowColor = shadowColor
+            self.closeHandler = closeHandler
         }
     }
 }
